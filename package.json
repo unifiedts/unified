@@ -1,6 +1,6 @@
 {
   "name": "@unifiedts/unified",
-  "version": "10.1.2",
+  "version": "10.1.3",
   "description": "Interface for parsing, inspecting, transforming, and serializing content through syntax trees",
   "license": "MIT",
   "keywords": [
