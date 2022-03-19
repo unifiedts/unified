@@ -1,107 +1,24 @@
-# [![unified][logo]][site]
-
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
-[![Sponsors][sponsors-badge]][collective]
-[![Backers][backers-badge]][collective]
-[![Chat][chat-badge]][chat]
 
-**unified** is an interface for processing text using syntax trees.
+**unifiedts** is a fork of **unifiedjs** which is  an interface for processing text using syntax trees.
 It’s what powers [**remark**][remark] (Markdown), [**retext**][retext] (natural
 language), and [**rehype**][rehype] (HTML), and allows for processing between
 formats.
 
-## Intro
+## Reason for forking **unifiedts**
 
-**unified** enables new exciting projects like [Gatsby][] to pull in Markdown,
-[MDX][] to embed [JSX][], and [Prettier][] to format it.
-It’s used in about 700k projects on GitHub and has about 35m downloads each
-month on npm: you’re probably using it.
-Some notable users are [Node.js][], [Vercel][], [Netlify][], [GitHub][],
-[Mozilla][], [WordPress][], [Adobe][], [Facebook][], [Google][], and many more.
+There was an unresolvable disagreement on if parse and/or stringify functions should be async. Hence to move found with a
+project I was developing it was easier to fork **unifiedjs**. 
 
-*   To read about what we are up to, follow us [Twitter][]
-*   For a less technical and more practical introduction to unified, visit
-    [`unifiedjs.com`][site] and peruse its [Learn][] section
-*   Browse [awesome unified][awesome] to find out more about the ecosystem
-*   Questions?
-    Get help on [Discussions][chat]!
-*   Check out [Contribute][] below to find out how to help out, or become a
-    backer or sponsor on [OpenCollective][collective]
-
-## Sponsors
-
-Support this effort and give back by sponsoring on [OpenCollective][collective]!
-
-<!--lint ignore no-html-->
-
-<table>
-<tr valign="middle">
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://vercel.com">Vercel</a><br><br>
-  <a href="https://vercel.com"><img src="https://avatars1.githubusercontent.com/u/14985020?s=256&v=4" width="128"></a>
-</td>
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://motif.land">Motif</a><br><br>
-  <a href="https://motif.land"><img src="https://avatars1.githubusercontent.com/u/74457950?s=256&v=4" width="128"></a>
-</td>
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://www.hashicorp.com">HashiCorp</a><br><br>
-  <a href="https://www.hashicorp.com"><img src="https://avatars1.githubusercontent.com/u/761456?s=256&v=4" width="128"></a>
-</td>
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://americanexpress.io">American Express</a><br><br>
-  <a href="https://americanexpress.io"><img src="https://avatars1.githubusercontent.com/u/3853301?s=256&v=4" width="128"></a>
-</td>
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://www.gitbook.com">GitBook</a><br><br>
-  <a href="https://www.gitbook.com"><img src="https://avatars1.githubusercontent.com/u/7111340?s=256&v=4" width="128"></a>
-</td>
-</tr>
-<tr valign="middle">
-</tr>
-<tr valign="middle">
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://www.gatsbyjs.org">Gatsby</a><br><br>
-  <a href="https://www.gatsbyjs.org"><img src="https://avatars1.githubusercontent.com/u/12551863?s=256&v=4" width="128"></a>
-</td>
-<td width="20%" align="center" rowspan="2" colspan="2">
-  <a href="https://www.netlify.com">Netlify</a><br><br>
-  <!--OC has a sharper image-->
-  <a href="https://www.netlify.com"><img src="https://images.opencollective.com/netlify/4087de2/logo/256.png" width="128"></a>
-</td>
-<td width="10%" align="center">
-  <a href="https://www.coinbase.com">Coinbase</a><br><br>
-  <a href="https://www.coinbase.com"><img src="https://avatars1.githubusercontent.com/u/1885080?s=256&v=4" width="64"></a>
-</td>
-<td width="10%" align="center">
-  <a href="https://themeisle.com">ThemeIsle</a><br><br>
-  <a href="https://themeisle.com"><img src="https://avatars1.githubusercontent.com/u/58979018?s=128&v=4" width="64"></a>
-</td>
-<td width="10%" align="center">
-  <a href="https://expo.io">Expo</a><br><br>
-  <a href="https://expo.io"><img src="https://avatars1.githubusercontent.com/u/12504344?s=128&v=4" width="64"></a>
-</td>
-<td width="10%" align="center">
-  <a href="https://boostnote.io">Boost Note</a><br><br>
-  <a href="https://boostnote.io"><img src="https://images.opencollective.com/boosthub/6318083/logo/128.png" width="64"></a>
-</td>
-<td width="10%" align="center">
-  <a href="https://www.holloway.com">Holloway</a><br><br>
-  <a href="https://www.holloway.com"><img src="https://avatars1.githubusercontent.com/u/35904294?s=128&v=4" width="64"></a>
-</td>
-<td width="10%"></td>
-</tr>
-<tr valign="middle">
-<td width="100%" align="center" colspan="6">
-  <br>
-  <a href="https://opencollective.com/unified"><strong>You?</strong></a>
-  <br><br>
-</td>
-</tr>
-</table>
+This repo with make limited changes from **unifiedjs**, some of the planned changes:
+* [] update parse and stringify to be async
+* [] create a fork of unified-args to use **unifiedts**
+* [] created a forked of remark and remark-cli that to uae **unifiedts**
+* [] possibly convert all forks to be .ts and emit umd as primary and modules as secordary
+ 
 
 ## Install
 
@@ -111,13 +28,13 @@ Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
 [npm][]:
 
 ```sh
-npm install unified
+npm install @unifiedts/unified
 ```
 
 ## Use
 
 ```js
-import {unified} from 'unified'
+import {unified} from '@unifiedts/unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeDocument from 'rehype-document'
