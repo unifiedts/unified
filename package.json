@@ -1,5 +1,5 @@
 {
-  "name": "unified",
+  "name": "@unifiedts/unified",
   "version": "10.1.2",
   "description": "Interface for parsing, inspecting, transforming, and serializing content through syntax trees",
   "license": "MIT",
@@ -21,21 +21,8 @@
     "remark"
   ],
   "homepage": "https://unifiedjs.com",
-  "repository": "unifiedjs/unified",
-  "bugs": "https://github.com/unifiedjs/unified/issues",
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/unified"
-  },
-  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-  "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-    "Junyoung Choi <fluke8259@gmail.com>",
-    "Hernan Rajchert <hrajchert@gmail.com>",
-    "Christian Murphy <christian.murphy.42@gmail.com>",
-    "Vse Mozhet Byt <vsemozhetbyt@gmail.com>",
-    "Richard Littauer <richard.littauer@gmail.com>"
-  ],
+  "repository": "unifiedts/unified",
+  "bugs": "https://github.com/unifiedts/unified/issues",
   "sideEffects": false,
   "type": "module",
   "main": "index.js",
